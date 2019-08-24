@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalcPage implements OnInit {
 
-  result : String;
+  result : string;
 
   constructor() {
     this.result = "";

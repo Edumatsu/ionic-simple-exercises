@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      News
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <h3>
+    Incluir Itens
+  </h3>
+  
+  <form>
+    <ion-item>
+      <ion-label position="stacked">Titulo</ion-label>
+      <ion-input placeholder="Informe um Título" type="text" [(ngModel)]="formData.title" name="title" #title></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Subtitulo</ion-label>
+      <ion-input placeholder="Informe um Subtítulo" type="text" [(ngModel)]="formData.subtitle" name="subtitle"></ion-input>
+    </ion-item>
+    
+    <ion-button color="primary" type="button" (click)="add(formData)">Cadastrar</ion-button>
+  </form>
+
+  <h3>
+    Itens adicionados
+  </h3>
+
+  <ion-list>
+    <ion-item *ngFor="let item of list">
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.subtitle}}
+      </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
